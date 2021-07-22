@@ -1,0 +1,73 @@
+<!--Set up how the browser reads the HTML file-->
+<!doctype html>
+<html lang="en-gb">
+<meta charset="utf-8">
+<title>My Web App</title>
+<link rel="stylesheet" href="default.css">
+<link rel="icon" href="favicon.png">
+<script type="module" src="main.js"></script>
+
+<!-- banner that contains input header-->
+<header>
+    <div class = "title">
+        <h1 class = "alignleft">Food Expiry Tracker</h1>
+        <div style="clear: both;"></div>
+    </div>
+</header>
+
+<!-- banner that contains input ribbon-->
+<main id="input-banner" class = "input_banner">
+    <main class = "input_container">
+        <p class = "desc" >Enter the name, food group and expiry date of your items, 
+        to track when they will go off!</p>
+        <textarea maxlength="25" id="food-name" class="input-text"
+            aria-label="Compose message" placeholder="(Food Name)"></textarea>
+            <!--select element with values directly pointing to icon files-->
+            <select id="food-type" class="input-list">
+                <option value="" hidden>(Food Group)</option>
+                <option value="icons/fruit_or_veg.png">Fruit or Veg</option>
+                <option value="icons/carbohydrates.png">Carbohydrate</option>
+                <option value="icons/protein.png">Protein</option>
+                <option value="icons/dairy.png">Dairy</option>
+            </select>
+            <input type="date" id="expiry" class="input-text"
+            aria-label="Compose message" ></input>
+            <button id="add-button" class="input-send" title="Send Message"><strong>Add</strong></button>
+            <button id="delete-all-button" class="input-send" title="Send Message"><strong>Reset</strong></button>
+    </main>
+</main>
+
+<!-- banner that contains the list of items-->
+<main class = "list_banner">
+    <main id = "item-container" class = "list_container">
+    </main>
+</main>
+
+<!-- template for list item-->
+<template name="item-template" id="item-template">
+    <section id="item_list">
+        <div name="item" class="item">
+            <div name="food-text" id="text" class="item_section"></div>
+            <div id="icon" class="item_section">
+                <img name="food-image" id="food-image" src="" alt="food icon" height=100%>
+            </div>
+            <div name="date-text" id="date" class="item_section"></div>
+            <div name="delete-button" id="delete" class="item_section">
+                <img src="icons/remove.png" alt="food icon" height=100%>
+            </div>
+        </div>
+    </section>
+</template>
+
+<!-- template for error message -->
+<template id="error-template">
+    <div name="error-button" id="error">
+        <div id="error-message">
+            <strong>Your input is invalid!</strong> 
+            <br>
+            Check you filled every entry and that you have not used the same name twice!
+            <br>
+            <strong>Click to continue</strong>
+        </div>
+    </div>
+</template>

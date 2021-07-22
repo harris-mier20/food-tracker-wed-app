@@ -1,0 +1,455 @@
+:root
+{
+    --banner-height: 80px;
+    --main-height: 800px;
+    --input-height: 150px;
+    --input-scale: 80%;
+    --list-scale: 80%;
+    --input-container-height: 110px;
+    --general-spacing: 20px;
+    --message-padding: 0.5em;
+    --input-padding: 1.67%;
+    --input-item-width: 22.5%;
+    --small-radius: 6px;
+    --big-radius: 12px;
+    --item-width: 96%;
+    --item-height: 160px;
+    --item-vert-spacing: 10px;
+    --item-padding:2%;
+    --desc-height: 50px;
+    --box-top-padding: 1.4em;
+    --error-top: 1.2em;
+    --error-width: 50%;
+    --error-box-top: 30px;
+
+    --pallete-1: #B9CDDD;
+    --pallete-2: #003D6C;
+    --pallete-3: #0C65A1;
+    --pallete-4: #0C405F;
+    --pallete-5: #012B41;
+    --pallete-accent: #FF5651;
+
+}
+
+body
+{
+    font-family: "Fira Sans", sans-serif;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    margin: 0;
+}
+
+/* Header Elements */
+
+header
+{
+    background: var(--pallete-5);
+    height: var(--banner-height);
+    width: 100%;
+    position: absolute;
+}
+
+main
+{
+    width: 100%;
+    position: absolute;
+}
+
+h1
+{
+    left:20%;
+}
+
+.title
+{
+    padding-left: calc((100% - var(--input-scale))/2);
+    padding-right: calc((100% - var(--input-scale))/2);
+}
+
+.alignleft
+{
+    float: left;
+    color: var(--pallete-1);
+}
+
+.alignright
+{
+    color: var(--pallete-1);
+    float: right;
+    text-align: right;
+    margin-top: 1.2em;
+}
+
+/* Input Section Elements */
+
+.input_banner 
+{
+    background: var(--pallete-3);
+    height: calc(var(--input-container-height) +
+    2 * var(--general-spacing));
+    top: var(--banner-height);
+    position: absolute;
+}
+
+.input_container
+{
+    background-color: var(--pallete-2);
+    height: var(--input-container-height);
+    width: var(--input-scale);
+    left: calc((100% - var(--input-scale)) / 2);
+    top: var(--general-spacing);
+    position: absolute;
+    border-radius: var(--big-radius);
+}
+
+.list_banner 
+{
+    background: var(--pallete-5);
+    height: var(--main-height);
+    top: calc(var(--input-height) + var(--banner-height));
+    position: absolute;
+}
+
+.list_container
+{
+    background-color: var(--pallete-2);
+    bottom: var(--general-spacing);
+    width: var(--list-scale);
+    left: calc((100% - var(--list-scale)) / 2);
+    top: var(--general-spacing);
+    position: absolute;
+    border-radius: var(--big-radius);
+    overflow-y: scroll;
+}
+
+.desc
+{
+    width: 100%;
+    height: var(--desc-height);
+    position:absolute;
+    text-align: center;
+    top: 0px;
+    color: var(--pallete-1);
+    font-size: inherit;
+}
+
+.input-text
+{
+    background: var(--pallete-1);
+    border: 1px solid var(--pallete-3);
+    border-radius: var(--small-radius);
+    box-shadow: none;
+    box-sizing: border-box;
+    color: black;
+    font-size: inherit;
+    height: calc(var(--input-container-height) - 
+    (var(--desc-height) + var(--general-spacing)));
+    top: var(--desc-height);
+    margin: 0;
+    outline: none;
+    padding: var(--message-padding);
+    position: absolute;
+    transition-duration: var(--transition-duration);
+    transition-property: border;
+    width: var(--input-item-width);
+    font-family: "Fira Sans", sans-serif;
+    resize: none;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.input-list
+{
+    width: var(--input-item-width);
+    height: calc(var(--input-container-height) - 
+    (var(--desc-height) + var(--general-spacing)));
+    top: var(--desc-height);
+    left: calc(var(--input-item-width) +
+    2 * var(--input-padding));
+    position: absolute;
+    background: var(--pallete-1);
+    border: 1px solid var(--pallete-3);
+    border-radius: var(--small-radius);
+    font-family: "Fira Sans", sans-serif;
+    padding: var(--message-padding);
+    font-size: inherit;
+    text-align: center;
+}
+
+.input-send
+{
+    width: calc(var(--input-item-width)/2);
+    height: calc(var(--input-container-height) - 
+    (var(--desc-height) + var(--general-spacing)));
+    top: var(--desc-height);
+    left: calc(3 * var(--input-item-width) +
+    4 * var(--input-padding));
+    position: absolute;
+    vertical-align: middle;
+    font-family: "Fira Sans", sans-serif;
+    padding: var(--message-padding);
+    font-size: inherit;
+    background: var(--pallete-5);
+    color: var(--pallete-1);
+    border: 1px solid var(--pallete-3);
+    border-radius: var(--small-radius);
+}
+
+.input-send:hover
+{
+    background: var(--pallete-1);
+    color: var(--pallete-5);  
+}
+
+#food-name
+{
+    left: var(--input-padding);
+    padding-top: 0.6em;
+}
+
+#expiry
+{
+    left: calc(2 * var(--input-item-width) +
+    3 * var(--input-padding));
+}
+
+#send-button
+{
+    left: calc(3 * var(--input-item-width) +
+    4 * var(--input-padding));
+}
+
+#delete-all-button
+{
+    left: calc(3.5 * var(--input-item-width) +
+    5 * var(--input-padding));
+    background-color: var(--pallete-accent);
+    color: var(--pallete-5);
+}
+
+#delete-all-button:hover
+{
+    background: var(--pallete-1);
+    color: var(--pallete-5); 
+}
+
+/* List and Item Elements */
+
+.item
+{
+    background-color:var(--pallete-1);
+    height: var(--item-height);
+    width: var(--item-width);
+    left: calc((100% - var(--item-width)) / 2);
+    margin-bottom: var(--general-spacing);
+    top: var(--general-spacing);
+    bottom: var(--general-spacing);
+    position: relative;
+    border-radius: var(--big-radius);
+}
+
+.item_section
+{
+    border-radius: var(--small-radius);
+    color: var(--pallete-5);
+    font-size: 22px;
+    height: calc(var(--item-height) - 
+    2 * var(--item-vert-spacing));
+    top: var(--item-vert-spacing);
+    position: absolute;
+    width: var(--input-item-width);
+    font-family: "Fira Sans", sans-serif;
+    text-align: center;
+    vertical-align: middle;
+    left: var(--input-padding);
+    font-weight: bold;
+}
+
+#text
+{
+    left: var(--item-padding);
+    padding-top: var(--box-top-padding);
+}
+
+#icon
+{
+    left: calc(var(--input-item-width) +
+    2 * var(--item-padding));
+}
+
+#date
+{
+    left: calc(2 * var(--input-item-width) +
+    3 * var(--item-padding));
+    padding-top: var(--box-top-padding);
+}
+
+#delete
+{
+    left: calc(3 * var(--input-item-width) +
+    4 * var(--item-padding));
+}
+
+#delete:hover{
+    opacity: 0.7;
+}
+
+/* Error Message Elements */
+
+#error
+{
+    position: absolute;
+    top: var(--error-box-top);
+    height: calc(var(--input-height) - (var(--error-box-top)*2));
+    background-color: var(--pallete-accent);
+    width: var(--error-width);
+    left: calc((100% - var(--error-width))/2);
+    border-radius: var(--big-radius);
+    text-align: center;
+}
+
+#error:hover
+{
+    border: 2px solid var(--pallete-5);
+}
+
+#error-message
+{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: var(--error-top);
+    text-align: center;
+    font-size: inherit;
+    color: var(--pallete-5);
+}
+
+/* Media Query */
+
+@media screen and (max-width: 1200px)  
+{
+    #error-message
+    {
+        top:1.2em;
+        font-size: 14px;
+    }   
+
+}
+
+@media screen and (max-width: 800px)  
+{
+
+    :root
+    {
+        --item-height: 100px;
+        --box-top-padding: 1.3em
+    }
+
+    h1
+    {
+        font-size: 22px;
+        margin-top: 1.2em;
+    }
+
+    .alignright
+    {
+        font-size: 17px;
+        margin-top: 1.9em;
+    } 
+
+    .input-text
+    {
+        font-size: 11px;
+        padding-top: 1em;
+    }
+
+    .input-list
+    {
+        font-size: 11px; 
+    }
+
+    .input-send
+    {
+        font-size: 11px; 
+    }
+
+    #food-name
+    {
+        padding-top: 1.2em;
+    }
+
+    .desc
+    {
+        font-size: 11px;
+        padding-top: 1em
+    }
+
+    .item_section
+    {
+        font-size: inherit;
+    }
+
+}
+
+@media screen and (max-width: 600px)  
+{
+
+    :root
+    {
+        --item-height: 90px;
+        --box-top-padding: 0.8em;
+    }
+
+    #error-message
+    {
+        top:2em;
+        font-size: 11px;
+    }
+
+    h1
+    {
+        font-size: 20px;
+        margin-top: 1.25em;
+    }
+
+    .alignright
+    {
+        font-size: 15px;
+        margin-top: 2em;
+    } 
+
+    .input-text
+    {
+        font-size: 9px;
+        padding-top: 1.5em;
+    }
+
+    .input-list
+    {
+        font-size: 9px; 
+    }
+
+    .input-send
+    {
+        font-size: 9px; 
+    }
+
+    .desc
+    {
+        font-size: 9px;
+        padding-top: 1.1em
+    }
+
+    #expiry
+    {
+        padding-top: 0.5em;
+    }
+
+    #food-name
+    {
+        padding-top: 1.5em;
+    }
+
+}
