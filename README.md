@@ -1,17 +1,3 @@
-**CID:** [01884866]
-
-# Project
-This repository is for the submission of your **Computing 2: Applications** coursework.
-
-You should complete the proforma and populate this repository with your project submission.
-
-* **Repository Creation Check:** Tuesday 4th May 18:00 – Update your CID in this file to check your submission.
-* **Peer Assessment Deadline:** Tuesday 8th June 18:00
-* **Final Submission Deadline:** Thursday 17th June 16:00
-
-# Computing 2 Submission Proforma
-
-For each section, write a maximum of 200 words.
 
 ## Brief
 A web app that takes a written input from a user, describing an item of food produce they have purchased. The input also consists of a drop-down menu, from which the user selects the food type. Lastly, the input requires the expiry date which uses the html date data entry. The app takes this data and forms an ordered list of items, for which items can be added to. Food that will reach it's expiry date first will appear at the top of the list. Each item is colour coded depending on the time until its expiry, for example, items coloured red will expire in the next 3 days. Each item is also assigned an icon depending on its food type. If the food is eaten, discarded or a mistake was made when inputting data, users have the option to remove an item at any point.
